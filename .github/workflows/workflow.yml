@@ -1,0 +1,14 @@
+# Пример для проекта на Node.js
+jobs:
+  build: # имя взято для примера
+    runs-on: ubuntu-latest
+
+    steps:
+      # Клонируем репозиторий
+      - uses: actions/checkout@v4
+      # Устанавливаем Node.js
+      - uses: actions/setup-node@v4
+      # Ставим зависимости
+      - run: make setup
+      - run: make test
+      - run: make lint
